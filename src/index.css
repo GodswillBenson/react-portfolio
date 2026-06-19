@@ -1,24 +1,13 @@
 /* src/index.css */
 @import "tailwindcss";
 
-@theme {
-  /* This maps the fonts directly to font-sans and font-serif utilities */
-  --font-sans: "Plus Jakarta Sans", sans-serif;
-  --font-serif: "Playfair Display", serif;
-
-  /* Setting up the signature marquee animation speed rules */
-  --animate-marquee: marquee 28s linear infinite;
-
-  @keyframes marquee {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(-33.33%);
-    }
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
 body {
-  background-color: #080808;
+  background-color: #0a0a0a;
+  color: white;
+  font-family: "Inter", sans-serif;
 }

@@ -1,22 +1,56 @@
-// src/components/Footer.jsx
-export default function Footer({ data }) {
+import { footerLinks } from "../data";
+
+const Footer = () => {
   return (
-    <footer className="bg-[#080808] border-t border-neutral-900 pt-20 pb-12 mt-auto">
-      <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+    <footer className="bg-[#0a0a0a] px-24 py-20 border-t border-gray-800">
+      <div className="flex flex-col lg:flex-row justify-between gap-16 mb-16">
+
+        {/* Logo */}
         <div>
-          <h2 className="text-xs tracking-[0.2em] font-medium text-neutral-500 uppercase mb-2">Project Request Terminal</h2>
-          <a href={`mailto:${data.email}`} className="text-xl font-light text-white hover:text-neutral-400 transition-colors">
-            {data.email}
+          <a href="#home" className="text-white text-3xl font-black tracking-wider">
+            GOD<span className="text-[#e8490f]">'</span>SWILL<span className="text-[#e8490f]">.</span>
           </a>
         </div>
-        <div className="flex flex-col items-end gap-3 text-xs tracking-wider">
-          <div className="flex gap-6 font-mono text-neutral-400">
-            <a href={data.github} target="_blank" rel="noreferrer" className="hover:text-white">GITHUB</a>
-            <a href={data.linkedin} target="_blank" rel="noreferrer" className="hover:text-white">LINKEDIN</a>
-          </div>
-          <p className="text-neutral-600 text-[10px] uppercase font-mono mt-2">{data.copyright}</p>
+
+        {/* Sitemap */}
+        <div className="flex flex-col gap-4">
+          <h4 className="text-white font-bold text-lg">Sitemap</h4>
+          {footerLinks.sitemap.map((link, index) => (
+            <a
+              key={index}
+              href={`#${link.toLowerCase()}`}
+              className="text-gray-500 hover:text-[#e8490f] transition-colors duration-300"
+            >
+              {link}
+            </a>
+          ))}
         </div>
+
+        {/* Socials */}
+        <div className="flex flex-col gap-4">
+          <h4 className="text-white font-bold text-lg">Socials</h4>
+          {footerLinks.socials.map((link, index) => (
+            <a
+              key={index}
+              href="#"
+              className="text-gray-500 hover:text-[#e8490f] transition-colors duration-300"
+            >
+              {link}
+            </a>
+          ))}
+        </div>
+
       </div>
+
+      {/* Copyright */}
+      <div className="border-t border-gray-800 pt-8 text-center">
+        <p className="text-gray-600 text-sm">
+          © God'swill Benson. All rights reserved.
+        </p>
+      </div>
+
     </footer>
   );
-}
+};
+
+export default Footer;
